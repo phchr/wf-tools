@@ -1,0 +1,60 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    gap: 50px;
+    padding: 0 2rem;
+    width: 1024px;
+  }
+}
+:root{
+  --hl-color-light-scheme: rgb(100, 0, 0);
+  --hl-color-dark-scheme: rgb(0, 230, 238);
+  --hl-color: var(--hl-color-light-scheme);
+
+  --hl-background-color-light-scheme: hsla(0, 100%, 24%, 0.2);
+  --hl-background-color-dark-scheme: hsla(189, 100%, 24%, 0.2);
+  --hl-background-color: var(--hl-background-color-light-scheme);
+  @media (prefers-color-scheme: dark) {
+    --hl-color: var(--hl-color-dark-scheme);
+    --hl-background-color: var(--hl-background-color-dark-scheme);
+  }
+}
+a{
+  text-decoration: none;
+  color: var(--hl-color);
+}
+.hl {
+  text-decoration: none;
+  color: var(--hl-color);
+  transition: 0.4s;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+nav{
+  margin-bottom: 30px;
+  @media (min-width: 1024px){
+    margin-bottom: 0;
+  }
+}
+
+@media (hover: hover) {
+  .hl:hover {
+    background-color: var(--hl-background-color);
+    border: 1px solid var(--hl-color);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+}
