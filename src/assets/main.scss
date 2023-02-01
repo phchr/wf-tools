@@ -21,9 +21,14 @@
   --hl-background-color-light-scheme: hsla(0, 100%, 24%, 0.2);
   --hl-background-color-dark-scheme: hsla(189, 100%, 24%, 0.2);
   --hl-background-color: var(--hl-background-color-light-scheme);
+
+  --hl-background-option-color-light-scheme: hsl(0, 0%, 100%);
+  --hl-background-option-color-dark-scheme: hsl(189, 100%, 10%);
+  --hl-background-option-color: var(--hl-background-option-color-light-scheme);
   @media (prefers-color-scheme: dark) {
     --hl-color: var(--hl-color-dark-scheme);
     --hl-background-color: var(--hl-background-color-dark-scheme);
+    --hl-background-option-color: var(--hl-background-option-color-dark-scheme);
   }
 }
 a{

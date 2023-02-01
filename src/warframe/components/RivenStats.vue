@@ -63,26 +63,56 @@
         <div>
             <h1>Positives:</h1>
             <ul>
-                <li v-for="[stat, range] of positives">{{ stat }}: {{ range }}</li>
+                <li v-for="[stat, range] of positives">{{ stat }}: <span class="float-right">{{ range }}</span></li>
             </ul>
         </div>
         <div v-if="hasNegative">
             <h1>Negatives:</h1>
             <ul>
-                <li v-for="[stat, range] of negatives">{{ stat }}: {{ range }}</li>
+                <li v-for="[stat, range] of negatives">{{ stat }}: <span class="float-right">{{ range }}</span></li>
             </ul>
         </div>
     </main>
 </template>
 
 <style scoped lang="scss">
+    @import './../../assets/sliders.scss';
     .settings{
         display:grid;
         border:0;
         grid-template-columns: 1fr 1fr;
+        column-gap: 12px;
         
         label {
-            display:block;
+            display:flex;
+            input{
+                margin-right: 8px;
+                background-color: var(--color-background);
+            }
+            input:is([type=number], [type=range]), select{
+                flex-grow: 1;
+                margin-left: 12px;
+                margin-right: 0;
+                color: var(--hl-color);
+                background-color: var(--hl-background-color);
+                border:0;
+                option {
+                    background-color: var(--hl-background-option-color);
+                }
+            }
+        }
+        label + label{
+            margin-top: 3px;
+        }
+    }
+    .float-right{
+        float: right;
+    }
+    li{
+        transition: 0.4s;
+        &:hover{
+            color:var(--hl-color);
+            border-bottom: 1px solid var(--hl-color);
         }
     }
 </style>
